@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Title>WPFXmlTranslator</Title>
+		<Description>WPF XML国际化</Description>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<Authors>沙漠尽头的狼</Authors>
+		<AssemblyName>WPFXmlTranslator</AssemblyName>
+		<RootNamespace>WPFXmlTranslator</RootNamespace>
+		<UseWPF>true</UseWPF>
+		<PackageId>WPFXmlTranslator</PackageId>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<Copyright>Copyright © CodeWF 2025</Copyright>
+		<OutputType>Library</OutputType>
+		<IsPackable>true</IsPackable>
+		<AssemblyVersion>0.0.0.1</AssemblyVersion>
+		<FileVersion>0.0.0.1</FileVersion>
+		<Version>0.0.0.1</Version>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageIcon>logo.png</PackageIcon>
+		<LangVersion>preview</LangVersion>
+		<PackageProjectUrl>https://github.com/dotnet9/AvaloniaExtensions</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/dotnet9/WPFXmlTranslator</RepositoryUrl>
+		<PackageTags>C#; WPF;XML;i18n</PackageTags>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
+		<Nullable>enable</Nullable>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="README.md" />
+		<None Include="..\..\logo.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+</Project>
