@@ -8,8 +8,8 @@ namespace WPFXmlTranslator.Converters;
 
 public class I18nConverter: IMultiValueConverter
 {
-    private readonly I18nBinding _owner;
-    public I18nConverter(I18nBinding owner)
+    private readonly I18nExtension _owner;
+    public I18nConverter(I18nExtension owner)
     {
         _owner = owner;
     }

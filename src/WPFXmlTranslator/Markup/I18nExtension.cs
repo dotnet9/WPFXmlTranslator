@@ -1,14 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Data;
 using System.Windows.Markup;
+using WPFXmlTranslator.Converters;
 
 namespace WPFXmlTranslator.Markup;
 
-public class I18nExtension : MarkupExtension
+[ContentProperty(nameof(Args))]
+[MarkupExtensionReturnType(typeof(object))]
+public class I18nExtension : MultiBinding
 {
     public I18nExtension(object key)
     {
+        Mode = BindingMode.OneWay;
+        Converter = new I18nConverter(this);
+        KeyConverter = new I18nKeyConverter();
+        ValueConverter = new I18nValueConverter();
+        Args = new ArgCollection(this);
+
+        var cultureBinding = new Binding
+            { Source = I18nManager.Instance, Path = new PropertyPath(nameof(I18nManager.Culture)) };
+        Bindings.Add(cultureBinding);
+
         Key = key;
+        if (Key is not BindingBase keyBinding)
+        {
+            keyBinding = new Binding { Source = key };
+        }
+
+        Bindings.Add(keyBinding);
     }
 
     public I18nExtension(object key, object arg0) : this(key)
@@ -83,7 +103,14 @@ public class I18nExtension : MarkupExtension
     }
 
     public object Key { get; }
-    public List<object> Args { get; } = new();
+
     public string? CultureName { get; set; }
-    public override object ProvideValue(IServiceProvider serviceProvider) => new I18nBinding(Key, CultureName, Args);
+
+    public ArgCollection Args { get; }
+
+    [ConstructorArgument(nameof(KeyConverter))]
+    public IValueConverter KeyConverter { get; set; }
+
+    [ConstructorArgument(nameof(ValueConverter))]
+    public IValueConverter ValueConverter { get; set; }
 }

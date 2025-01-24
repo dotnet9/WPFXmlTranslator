@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.Core" Version="9.0.537" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WPFXmlTranslator\WPFXmlTranslator.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="I18n\en-US.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="I18n\ja-JP.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="I18n\Language.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Language.cs</LastGenOutput>
+    </None>
+    <None Update="I18n\zh-CN.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="I18n\zh-Hant.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="I18n\Language.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Language.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

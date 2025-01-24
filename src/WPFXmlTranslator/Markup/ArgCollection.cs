@@ -4,7 +4,7 @@ using System.Windows.Data;
 
 namespace WPFXmlTranslator.Markup;
 
-public class ArgCollection(I18nBinding owner) : Collection<object>
+public class ArgCollection(I18nExtension owner) : Collection<object>
 {
     // HACK: Replace the System.ValueTuple with a struct.
     // See here for details: https://github.com/dotnet/wpf/issues/2320
