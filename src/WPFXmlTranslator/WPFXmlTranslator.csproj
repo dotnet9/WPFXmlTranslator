@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<Title>WPFXmlTranslator</Title>
 		<Description>WPF XML国际化</Description>
-		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFrameworks>net462;net472;net5.0-windows;net6.0-windows;net7.0-windows;net8.0-windows;net9.0-windows</TargetFrameworks>
 		<Authors>沙漠尽头的狼</Authors>
 		<AssemblyName>WPFXmlTranslator</AssemblyName>
 		<RootNamespace>WPFXmlTranslator</RootNamespace>
@@ -22,7 +22,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageIcon>logo.png</PackageIcon>
 		<LangVersion>preview</LangVersion>
-		<PackageProjectUrl>https://github.com/dotnet9/AvaloniaExtensions</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/dotnet9/WPFXmlTranslator</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/dotnet9/WPFXmlTranslator</RepositoryUrl>
 		<PackageTags>C#; WPF;XML;i18n</PackageTags>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
